@@ -1,0 +1,55 @@
+PODS:
+  - Braintree/Card (4.15.0):
+    - Braintree/Core
+  - Braintree/Core (4.15.0)
+  - Braintree/PaymentFlow (4.15.0):
+    - Braintree/Card
+    - Braintree/Core
+  - Braintree/UnionPay (4.15.0):
+    - Braintree/Card
+    - Braintree/Core
+  - BraintreeDropIn (6.2.0):
+    - BraintreeDropIn/DropIn (= 6.2.0)
+  - BraintreeDropIn/DropIn (6.2.0):
+    - Braintree/Card (~> 4.11)
+    - Braintree/Core (~> 4.11)
+    - Braintree/PaymentFlow (~> 4.11)
+    - Braintree/UnionPay (~> 4.11)
+    - BraintreeDropIn/UIKit
+  - BraintreeDropIn/UIKit (6.2.0)
+  - Cmg (1.3.0)
+  - IGRPhotoTweaks (1.0.7)
+  - IQKeyboardManagerSwift (6.0.3)
+  - PKYStepper (0.0.1)
+  - Toast-Swift (3.0.1)
+
+DEPENDENCIES:
+  - BraintreeDropIn
+  - Cmg
+  - IGRPhotoTweaks
+  - IQKeyboardManagerSwift
+  - PKYStepper
+  - Toast-Swift
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Braintree
+    - BraintreeDropIn
+    - Cmg
+    - IGRPhotoTweaks
+    - IQKeyboardManagerSwift
+    - PKYStepper
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Braintree: 5f10816f455ffd79c411e6d22a177846971f3677
+  BraintreeDropIn: 4e80bce4bc2b430f2fb1af0cd13ff3223d2758d3
+  Cmg: 4448f97235b28e15cdbd380ed83b78baaf8c9353
+  IGRPhotoTweaks: 8fe6b62c6599238d860b19b46a85a454e202f502
+  IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
+  PKYStepper: 8dacefbddf9fa2b6aaec2ef828b46a78daa2db7d
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
+
+PODFILE CHECKSUM: e6ce16e664cfc8074e09238fd9378ffb5a1eb710
+
+COCOAPODS: 1.5.0
