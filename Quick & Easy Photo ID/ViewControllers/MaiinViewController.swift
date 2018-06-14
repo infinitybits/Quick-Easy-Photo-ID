@@ -93,19 +93,29 @@ extension MaiinViewController : UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        CropUser.shared.ratio = Constants.schengenAspectRatioList[0]
+       
 //        let cropVC = CropViewController.instantiate(fromAppStoryboard: .Main)
 //        cropVC.image = image
 //        cropVC.country = Constants.countrySchengen
 //        cropVC.selectedType = Constants.schengenList[0]
         
-            let cropVC = TakePhotoViewController.instantiate(fromAppStoryboard: .Main)
-            cropVC.tmpSelectedImage = image
-            cropVC.country = Constants.countrySchengen
-            cropVC.selectedType = Constants.schengenList[0]
+        
+        //client chaage navigation
+         CropUser.shared.ratio = Constants.schengenAspectRatioList[0]
+        CropUser.shared.image = image
+    
+        let countryVC = CountryViewController.instantiate(fromAppStoryboard: .Main)
+        countryVC.isNavigateToAccuracy = true
+       
+      
+        
+//            let cropVC = TakePhotoViewController.instantiate(fromAppStoryboard: .Main)
+//            cropVC.tmpSelectedImage = image
+//            cropVC.country = Constants.countrySchengen
+//            cropVC.selectedType = Constants.schengenList[0]
 
         picker.dismiss(animated: true) {
-            self.navigationController?.pushViewController(cropVC, animated: true)
+            self.navigationController?.pushViewController(countryVC, animated: true)
         }
         
         

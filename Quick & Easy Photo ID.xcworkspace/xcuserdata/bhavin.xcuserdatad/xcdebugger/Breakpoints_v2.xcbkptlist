@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Quick &amp; Easy Photo ID/ViewControllers/AccuracyViewController.swift"
-            timestampString = "549403775.103063"
+            timestampString = "549923189.1927789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "btnPhoyoTypeTapped(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Quick &amp; Easy Photo ID/ViewControllers/TakePhotoViewController.swift"
-            timestampString = "549096189.962165"
+            timestampString = "549996569.691033"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "267"
             endingLineNumber = "267"
-            landmarkName = "capturePhoto(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,12 +42,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Quick &amp; Easy Photo ID/ViewControllers/TakePhotoViewController.swift"
-            timestampString = "549096189.962604"
+            timestampString = "549996569.691221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "562"
             endingLineNumber = "562"
-            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Quick &amp; Easy Photo ID/ViewControllers/AccuracyViewController.swift"
+            timestampString = "549923189.192989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "hamburgerBtnTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,13 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Quick &amp; Easy Photo ID/ViewControllers/AccuracyViewController.swift"
-            timestampString = "549403775.103673"
+            timestampString = "549923189.193104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "viewDidLayoutSubviews()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,13 +90,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Quick &amp; Easy Photo ID/ViewControllers/AccuracyViewController.swift"
-            timestampString = "549403775.104072"
+            timestampString = "549923189.193194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "viewForZooming(in:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -89,14 +105,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Quick &amp; Easy Photo ID/ViewControllers/AccuracyViewController.swift"
-            timestampString = "549403775.1044821"
+            filePath = "Quick &amp; Easy Photo ID/ViewControllers/CropViewController.swift"
+            timestampString = "549923189.193275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "stopScroll()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -105,14 +121,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Quick &amp; Easy Photo ID/ViewControllers/AccuracyViewController.swift"
-            timestampString = "549403775.105019"
+            filePath = "Quick &amp; Easy Photo ID/ViewControllers/GoodAndBadViewController.swift"
+            timestampString = "549923189.193939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "btnNextTapped(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Quick___Easy_Photo_ID.GoodAndBadViewController.btnNextTapped(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "Quick &amp; Easy Photo ID"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bhavin/Desktop/Kushal/Final%20code/Quick%20&amp;%20Easy%20Photo%20ID/Quick%20&amp;%20Easy%20Photo%20ID/ViewControllers/GoodAndBadViewController.swift"
+                  timestampString = "549921939.840151"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Quick___Easy_Photo_ID.GoodAndBadViewController.btnNextTapped(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "Quick &amp; Easy Photo ID"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bhavin/Desktop/Kushal/Final%20code/Quick%20&amp;%20Easy%20Photo%20ID/Quick%20&amp;%20Easy%20Photo%20ID/ViewControllers/GoodAndBadViewController.swift"
+                  timestampString = "549921939.843588"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

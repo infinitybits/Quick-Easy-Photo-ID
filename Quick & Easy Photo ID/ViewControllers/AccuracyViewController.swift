@@ -22,7 +22,13 @@ class AccuracyViewController: IGRPhotoTweakViewController , UIScrollViewDelegate
     @IBOutlet var bottomSideLabel: UILabel!
     @IBOutlet weak var btnPhotoType : UIButton!
     @IBOutlet var cropAreaView: CropAreaView!
-    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIScrollView!{
+        didSet{
+            scrollView.delegate = self
+            scrollView.minimumZoomScale = 1.0
+            scrollView.maximumZoomScale = 10.0
+        }
+    }
     
     @IBOutlet var leadingC: NSLayoutConstraint!
     @IBOutlet var trailingC: NSLayoutConstraint!
@@ -39,20 +45,25 @@ class AccuracyViewController: IGRPhotoTweakViewController , UIScrollViewDelegate
      var hamburgerMenuIsVisible = false
     
     
-  
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.imgMask
+    }
 
     
     //MARK: - custom methods
     
     func setupView(){
         
-        
+       
         self.resetView()
         self.setupThemes()
-        
+       
         self.delegate = self
+        print(CropUser.shared.ratio)
         self.setCropAspectRect(aspect: CropUser.shared.ratio)
         self.lockAspectRatio(true)
+        
+    
         
         //imgMask.ratio
         IGRCropCornerLine.appearance().backgroundColor = UIColor.clear
@@ -193,7 +204,7 @@ class AccuracyViewController: IGRPhotoTweakViewController , UIScrollViewDelegate
     
     override func viewDidLayoutSubviews() {
         
-        self.view.bringSubview(toFront: self.ubeView)
+//        self.view.bringSubview(toFront: self.ubeView)
     }
     
 }
@@ -213,7 +224,7 @@ extension AccuracyViewController : IGRPhotoTweakViewControllerDelegate {
         
         CropUser.shared.editedImage = croppedImage
         CropUser.shared.image = croppedImage
-        CropUser.shared.ratio = self.selectedRatio
+       
         self.navigationController?.pushViewController(editVC, animated: true)
     }
     

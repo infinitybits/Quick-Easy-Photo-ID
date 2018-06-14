@@ -14,4 +14,5 @@ class CropUser {
     var image:UIImage!
     var ratio:String!
     var editedImage:UIImage!
+    var countryName : String!
 }

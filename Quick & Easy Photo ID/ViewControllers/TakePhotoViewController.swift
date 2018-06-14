@@ -21,6 +21,8 @@ class TakePhotoViewController : BaseViewController {
      @IBOutlet fileprivate var cameraButton: UIBarButtonItem!
     @IBOutlet weak var photoButton : UIButton!
     @IBOutlet weak var lblCropSize : UILabel!
+    
+    @IBOutlet var conHeight: NSLayoutConstraint!
     var selectedRatio:String?
     var country:String?
     var selectedType:String?
@@ -287,8 +289,8 @@ class TakePhotoViewController : BaseViewController {
                             let croppedImage = UIImage(data: data)
                             CropUser.shared.image = croppedImage
                             CropUser.shared.ratio = self.selectedRatio
-                            let accuracyVC = AccuracyViewController.instantiate(fromAppStoryboard: .Main)
-                            accuracyVC.croppedImage = croppedImage
+                            let accuracyVC = CropViewController.instantiate(fromAppStoryboard: .Main)
+//                            accuracyVC.croppedImage = croppedImage
                             accuracyVC.image = croppedImage
                             accuracyVC.country = self.country
                             accuracyVC.selectedType = self.selectedType
@@ -559,10 +561,13 @@ extension TakePhotoViewController : UIImagePickerControllerDelegate, UINavigatio
         
         CropUser.shared.image = image
         CropUser.shared.ratio = self.selectedRatio
-        let cropVC = AccuracyViewController.instantiate(fromAppStoryboard: .Main)
+        let cropVC = CropViewController.instantiate(fromAppStoryboard: .Main)
         cropVC.image = image
         cropVC.country = self.country
-       cropVC.selectedType = self.selectedType
+        cropVC.selectedType = self.selectedType
+        
+        
+        
 
         picker.dismiss(animated: true) {
             self.navigationController?.pushViewController(cropVC, animated: true)

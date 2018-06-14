@@ -38,6 +38,9 @@
 		54F43B3B20B341830023F42C /* PrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F43B3A20B341830023F42C /* PrintViewController.swift */; };
 		9DC8200111676B156BD0BE07 /* Pods_Quick___Easy_Photo_ID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F548C9806EC3CFD05B9F81A /* Pods_Quick___Easy_Photo_ID.framework */; };
 		F13091EE20BC87A40039152F /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13091ED20BC87A40039152F /* CheckOutViewController.swift */; };
+		F140395D20C71851008F3423 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140395C20C71851008F3423 /* TermsViewController.swift */; };
+		F140395F20C71868008F3423 /* GeneralGuidelinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140395E20C71868008F3423 /* GeneralGuidelinesViewController.swift */; };
+		F140396120C71D18008F3423 /* GoodAndBadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F140396020C71D18008F3423 /* GoodAndBadViewController.swift */; };
 		F15762D020B9749D00A086E6 /* CamearaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15762CF20B9749D00A086E6 /* CamearaController.swift */; };
 		F1D507B520B4B4DA000A7AD6 /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D507B320B4B4D9000A7AD6 /* TakePhotoViewController.swift */; };
 		F1D507B620B4B4DA000A7AD6 /* AccuracyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D507B420B4B4D9000A7AD6 /* AccuracyViewController.swift */; };
@@ -79,6 +82,9 @@
 		54F43B3A20B341830023F42C /* PrintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintViewController.swift; sourceTree = "<group>"; };
 		86C0CA8399FC67614A80B1AD /* Pods-Quick & Easy Photo ID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quick & Easy Photo ID.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quick & Easy Photo ID/Pods-Quick & Easy Photo ID.debug.xcconfig"; sourceTree = "<group>"; };
 		F13091ED20BC87A40039152F /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
+		F140395C20C71851008F3423 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		F140395E20C71868008F3423 /* GeneralGuidelinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralGuidelinesViewController.swift; sourceTree = "<group>"; };
+		F140396020C71D18008F3423 /* GoodAndBadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodAndBadViewController.swift; sourceTree = "<group>"; };
 		F15762CF20B9749D00A086E6 /* CamearaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamearaController.swift; sourceTree = "<group>"; };
 		F1D507B320B4B4D9000A7AD6 /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
 		F1D507B420B4B4D9000A7AD6 /* AccuracyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccuracyViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +153,9 @@
 				544395B020AB544B0086A240 /* EditImageViewController.swift */,
 				54972F8420B0359F006E2081 /* MaiinViewController.swift */,
 				54F43B3A20B341830023F42C /* PrintViewController.swift */,
+				F140395C20C71851008F3423 /* TermsViewController.swift */,
+				F140395E20C71868008F3423 /* GeneralGuidelinesViewController.swift */,
+				F140396020C71D18008F3423 /* GoodAndBadViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -377,6 +386,7 @@
 				54D9D13C209F1F12004275D8 /* IDTypeCell.swift in Sources */,
 				5457146A20A244EE004D888D /* HomeViewController.swift in Sources */,
 				5428862C209B8DE6005152A2 /* Quick___Easy_Photo_ID.xcdatamodeld in Sources */,
+				F140395D20C71851008F3423 /* TermsViewController.swift in Sources */,
 				5428863F209B9452005152A2 /* NrvUIView.swift in Sources */,
 				54972F8520B0359F006E2081 /* MaiinViewController.swift in Sources */,
 				54D9D130209E4050004275D8 /* NrvCAGradientLayer.swift in Sources */,
@@ -391,9 +401,11 @@
 				F15762D020B9749D00A086E6 /* CamearaController.swift in Sources */,
 				544395AE20A36E020086A240 /* Constants.swift in Sources */,
 				F1D507B620B4B4DA000A7AD6 /* AccuracyViewController.swift in Sources */,
+				F140395F20C71868008F3423 /* GeneralGuidelinesViewController.swift in Sources */,
 				54288645209DE6AF005152A2 /* NrvUIViewController.swift in Sources */,
 				544395B120AB544B0086A240 /* EditImageViewController.swift in Sources */,
 				54D9D139209EF681004275D8 /* IDTypeViewController.swift in Sources */,
+				F140396120C71D18008F3423 /* GoodAndBadViewController.swift in Sources */,
 				54288641209DE176005152A2 /* StartViewController.swift in Sources */,
 				54288648209DE73C005152A2 /* AppFunctions.swift in Sources */,
 				F1D507B520B4B4DA000A7AD6 /* TakePhotoViewController.swift in Sources */,

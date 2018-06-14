@@ -12,7 +12,10 @@ class CountryViewController: BaseViewController {
 
     @IBOutlet weak var countryTableView: UITableView!
     
-    let countryList = ["America", "Bangladesh", "Canada", "China", "India", "Pakistan", "Schengen"]
+    
+    var isNavigateToAccuracy : Bool = false
+    
+    let countryList = ["America", "Bangladesh", "Canada", "China", "India", "Pakistan", "Schengen","UK"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,10 +71,12 @@ extension CountryViewController : UITableViewDelegate, UITableViewDataSource {
             idTypeVC.selectedCountry = Constants.countryIndia
         }else if indexPath.row == 5 {
             idTypeVC.selectedCountry = Constants.countryPakistan
+        }else if indexPath.row == 7 {
+            idTypeVC.selectedCountry = Constants.countryUK
         }else {
             idTypeVC.selectedCountry = Constants.countrySchengen
         }
-        
+        idTypeVC.isNavigateToAccuracy = self.isNavigateToAccuracy
         self.navigationController?.pushViewController(idTypeVC, animated: true)
     }
 }

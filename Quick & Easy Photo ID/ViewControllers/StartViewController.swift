@@ -25,9 +25,13 @@ class StartViewController: BaseViewController {
     }
 
     @IBAction func onBtnStartClick(_ sender: UIButton) {
-        let mainVC = MaiinViewController.instantiate(fromAppStoryboard: .Main)
-        self.navigationController?.pushViewController(mainVC, animated: true)
-//                let countryVC = CheckOutViewController.instantiate(fromAppStoryboard: .Main)
-//                self.navigationController?.pushViewController(countryVC, animated: true)
+        //        let mainVC = MaiinViewController.instantiate(fromAppStoryboard: .Main)
+        //        self.navigationController?.pushViewController(mainVC, animated: true)
+        
+        //change navigation 06.06.2018
+        
+        let termsVC = TermsViewController.instantiate(fromAppStoryboard: .Main)
+        self.navigationController?.pushViewController(termsVC, animated: true)
+        
     }
 }

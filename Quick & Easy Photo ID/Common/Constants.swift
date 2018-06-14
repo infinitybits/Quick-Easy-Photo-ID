@@ -11,6 +11,7 @@ import Foundation
 struct Constants {
     
     static let countryAmerica = "America"
+    static let countryUK    = "UK"
     static let countryBangladesh = "Bangladesh"
     static let countryCanada = "Canada"
     static let countryChina = "China"
@@ -22,6 +23,11 @@ struct Constants {
     static let americanList = ["Visa"]
     static let americanSizeList = ["35 * 35 mm"]
     static let americanAspectRatioList = ["35:35"]
+    
+    static let ukList = ["UK Passport"]
+    static let ukSizeList = ["45 * 35 mm"]
+    static let ukAspectRatioList = ["45:35"]
+    
     
     static let bangladeshList = ["Passport"]
     static let bangladeshSizeList = ["45 * 55 mm"]
@@ -37,7 +43,7 @@ struct Constants {
     
     static let indianList = ["Passport", "Visa Online", "Pan Card", "Birth Registration"]
     static let indianSizeList = ["51 * 51 mm", "350 * 350 pixel", "25 * 35 mm", "100 * 120 pixel"]
-    static let indianAspectRatioList = ["51:51", "350:350", "25:35", "100:120"]
+    static let indianAspectRatioList = ["51:51", "92.60:92.60", "25:35", "26.45:31.75"]
     
     static let pakistanList = ["Nadra or NICOP"]
     static let pakistanSizeList = ["35 * 45 mm"]

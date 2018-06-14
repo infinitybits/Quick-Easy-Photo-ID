@@ -22,6 +22,8 @@ class EditImageViewController: BaseViewController {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var lblFiltrTitle: UILabel!
+    @IBOutlet weak var lblPhotoType : UILabel!
+    @IBOutlet weak var lblRatioType : UILabel!
     
     var colorControl = ColorControls.init()
     var selectedFilterType:FilterType = .Brightness
@@ -41,6 +43,15 @@ class EditImageViewController: BaseViewController {
             self.imgView.image = img
             self.tmpImage = CropUser.shared.image
         }
+        
+        if let ratio = CropUser.shared.ratio{
+            self.lblRatioType.text = ratio
+        }
+        
+        if let country = CropUser.shared.countryName{
+            self.lblPhotoType.text = country
+        }
+        
         
         self.lblFiltrTitle.text = "Brightness"
     }
@@ -62,8 +73,9 @@ class EditImageViewController: BaseViewController {
         }else {
             self.colorControl.saturation = sender.value
         }
-        let img = tmpImage.imageWithBorder(width: 100, color: UIColor.white)
-        self.imgView.image = self.colorControl.processing(img!)
+        if let img = tmpImage.imageWithBorder(width: 100, color: UIColor.white){
+        self.imgView.image = self.colorControl.processing(img)
+        }
     }
     
     @IBAction func onBtnBrightnessClick(_ sender: UIButton) {

@@ -11,42 +11,128 @@ import IGRPhotoTweaks
 
 class CropViewController: IGRPhotoTweakViewController {
     
-    @IBOutlet weak var imgMask: UIImageView!
+    
+    @IBOutlet weak var btnPhotoType : UIButton!
+    @IBOutlet var leadingC: NSLayoutConstraint!
+    @IBOutlet var trailingC: NSLayoutConstraint!
+    @IBOutlet weak var btnMenu : UIBarButtonItem!
+    
+    @IBOutlet var ubeView: UIView!
+  
+    @IBOutlet weak var lblSubTitle: UILabel!
+    
     var selectedRatio:String?
     var country:String?
     var selectedType:String?
-    var picker:UIImagePickerController?=UIImagePickerController()
-    @IBOutlet weak var lblSubTitle: UILabel!
+   
+    var hamburgerMenuIsVisible = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        picker?.delegate = self
+      
+        
+        self.resetView()
+        self.setupThemes()
         self.addNavBackBtn()
-        navigationItem.title = self.country
+       
         self.lblSubTitle.text = self.selectedType
+        print(CropUser.shared.ratio)
         self.setCropAspectRect(aspect: CropUser.shared.ratio)
         self.lockAspectRatio(true)
         //imgMask.ratio
-        IGRCropCornerLine.appearance().backgroundColor = UIColor.clear
-        IGRCropLine.appearance().backgroundColor = UIColor.clear
-        IGRCropGridLine.appearance().backgroundColor = UIColor.clear
-        IGRCropCornerLine.appearance().backgroundColor = UIColor.clear
-        IGRCropMaskView.appearance().backgroundColor = UIColor.clear
+        
+        self.stopChangeAngle()
+        
+        
+        if let country = country{
+            self.btnPhotoType.setTitle(country, for: .normal)
+        }
+    
+         self.leadingC.constant = self.view.frame.size.width
+        
+        
+//        IGRCropCornerLine.appearance().backgroundColor = UIColor.orange
+//        IGRCropLine.appearance().backgroundColor = UIColor.yellow
+//        IGRCropGridLine.appearance().backgroundColor = UIColor.black
+//        IGRCropCornerLine.appearance().backgroundColor = UIColor.white
+//        IGRCropMaskView.appearance().backgroundColor = UIColor.black
+        
     }
+    
+    @IBAction func hamburgerBtnTapped(_ sender: Any) {
+        //if the hamburger menu is NOT visible, then move the ubeView back to where it used to be
+        if !hamburgerMenuIsVisible {
+            leadingC.constant = leadingC.constant - 250
+            //this constant is NEGATIVE because we are moving it 150 points OUTWARD and that means -150
+            //trailingC.constant = -150
+            
+            //1
+            hamburgerMenuIsVisible = true
+        } else {
+            //if the hamburger menu IS visible, then move the ubeView back to its original position
+            leadingC.constant = self.view.frame.size.width
+            // trailingC.constant = 0
+            
+            //2
+            hamburgerMenuIsVisible = false
+        }
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+            self.view.layoutIfNeeded()
+        }) { (animationComplete) in
+            print("The animation is complete!")
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
 
-    @IBAction func onBtnCropClick(_ sender: UIButton) {
+ 
+    
+    @IBAction func btnAcceptedTapped(_ sender: UIButton) {
         self.cropAction()
+        
     }
     
-    @IBAction func onBtnCancelClick(_ sender: UIButton) {
-        self.showOptionForImage()
-      //  self.dismissAction()
+    
+    @IBAction func btnSaveToGalleryTapped(_ sender : UIButton){
+        self.hamburgerBtnTapped(self.btnMenu)
+        self.btnAcceptedTapped(UIButton())
+        
     }
+    @IBAction func btnPrintTapped(_ sender : UIButton){
+        self.hamburgerBtnTapped(self.btnMenu)
+        
+        CropUser.shared.editedImage = self.image
+        
+        let homeVC = HomeViewController.instantiate(fromAppStoryboard: .Main)
+        self.navigationController?.pushViewController(homeVC, animated: true)
+        
+    }
+    @IBAction func btnShareApplicationTapped(_ sender : UIButton){
+        self.hamburgerBtnTapped(self.btnMenu)
+        
+        let textToShare = "Download Quick & Easy photo ID"
+        
+        if let myWebsite = URL(string: "http://www.google.com/") {
+            let objectsToShare = [textToShare, myWebsite] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            activityVC.popoverPresentationController?.sourceView = sender
+            self.present(activityVC, animated: true, completion: nil)
+        }
+        
+    }
+    @IBAction func btnRetakePhotoTapped(_ sender : UIButton){
+        self.hamburgerBtnTapped(self.btnMenu)
+        self.goBack()
+        
+    }
+    
+    
     
     func addNavBackBtn(){
         
@@ -62,33 +148,21 @@ class CropViewController: IGRPhotoTweakViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func showOptionForImage() {
-        let alert = UIAlertController (title: nil, message: nil, preferredStyle: .actionSheet)
-        let btnCamera = UIAlertAction (title: "Camera", style: .default) { (action) in
-            DispatchQueue.main.async {
-                self.openCamera()
-            }
-        }
-        let btnGalary = UIAlertAction (title: "Open Photos", style: .default) { (action) in
-            DispatchQueue.main.async {
-                self.openLibrary()
-            }
-        }
-        let btnCancel = UIAlertAction (title: "Cancel", style: .cancel) { (action) in
-        }
-        
-        alert.addAction(btnCamera)
-        alert.addAction(btnGalary)
-        alert.addAction(btnCancel)
-        
-        self.present(alert, animated: true, completion: nil)
-    }
+    
 }
 
 extension CropViewController : IGRPhotoTweakViewControllerDelegate {
     func photoTweaksController(_ controller: IGRPhotoTweakViewController, didFinishWithCroppedImage croppedImage: UIImage) {
         CropUser.shared.image = croppedImage
+//        let editVC = EditImageViewController.instantiate(fromAppStoryboard: .Main)
+        
+        
         let editVC = EditImageViewController.instantiate(fromAppStoryboard: .Main)
+        
+        CropUser.shared.editedImage = croppedImage
+        CropUser.shared.image = croppedImage
+        CropUser.shared.ratio = self.selectedType
+        CropUser.shared.countryName = self.country
         self.navigationController?.pushViewController(editVC, animated: true)
     }
 
@@ -99,25 +173,7 @@ extension CropViewController : IGRPhotoTweakViewControllerDelegate {
 
 extension CropViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    func openLibrary() {
-        
-        Utility.getPhotoLibraryAuthorizationStatus { (status, error) in
-            if status {
-                self.picker?.sourceType = .photoLibrary
-                self.present(self.picker!, animated: true, completion: nil)
-            }
-        }
-    }
-    
-    func openCamera() {
-        Utility.getCameraAuthorizationStatus { (status, error) in
-            if status {
-                self.picker?.sourceType = .camera
-                self.present(self.picker!, animated: true, completion: nil)
-            }
-        }
-    }
-    
+  
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         let cropVC = CropViewController.instantiate(fromAppStoryboard: .Main)
@@ -144,4 +200,14 @@ extension CropViewController : UIImagePickerControllerDelegate, UINavigationCont
     }
 }
 
-
+extension IGRPhotoTweakView {
+    
+    public override func awakeFromNib() {
+        self.stopScroll()
+    }
+    func stopScroll(){
+        self.scrollView.minimumZoomScale = 1.0
+        self.scrollView.maximumZoomScale = 1.0
+    }
+    
+}

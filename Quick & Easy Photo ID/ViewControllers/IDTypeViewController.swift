@@ -20,7 +20,7 @@ class IDTypeViewController: BaseViewController {
     var selectedCountry:String?
     var selectedAspectRatio:String = "35:45"
     var selectedSize:String?
-    
+    var isNavigateToAccuracy : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addNavBackBtn(withSelector: #selector(goBack))
@@ -69,6 +69,11 @@ class IDTypeViewController: BaseViewController {
             self.IDTypeSizeList = Constants.pakistanSizeList
             self.IDTypeAspectRatioList = Constants.pakistanAspectRatioList
             
+        }else if selectedCountry == Constants.countryUK {
+            self.IDTypeList = Constants.ukList
+            self.IDTypeSizeList = Constants.ukSizeList
+            self.IDTypeAspectRatioList = Constants.ukAspectRatioList
+            
         }else if selectedCountry == Constants.countrySchengen {
             self.IDTypeList = Constants.schengenList
             self.IDTypeSizeList = Constants.schengenSizeList
@@ -108,18 +113,17 @@ extension IDTypeViewController : UITableViewDelegate, UITableViewDataSource {
         if indexPath.row != 0 {
             CropUser.shared.ratio = self.IDTypeAspectRatioList[indexPath.row - 1]
             self.selectedSize = self.IDTypeList[indexPath.row - 1] + " " + self.IDTypeSizeList[indexPath.row - 1]
-            DispatchQueue.main.async {
-//                self.showOptionForImage()
-                
-               
-                let cropVC = TakePhotoViewController.instantiate(fromAppStoryboard: .Main)
-                //        cropVC.image = image
-                cropVC.selectedRatio = CropUser.shared.ratio
-                cropVC.country = self.selectedCountry
-                cropVC.selectedType = self.selectedSize
-                self.navigationController?.pushViewController(cropVC, animated: true)
-                
-            }
+            
+            //change navigation 06.06.2018
+            //navigate to good bad and then navigate to accuracy or take photo
+            
+            let goodBadVc = GoodAndBadViewController.instantiate(fromAppStoryboard: .Main)
+            goodBadVc.selectedCountry = self.selectedCountry
+            goodBadVc.selectedType = self.selectedSize
+            goodBadVc.selectedSize = self.selectedSize
+            goodBadVc.isNavigateToAccuracy = self.isNavigateToAccuracy
+            self.navigationController?.pushViewController(goodBadVc, animated: true)
+          
         }
     }
     
